@@ -1,0 +1,36 @@
+﻿@model GolfHandicap.ViewModels.AddRoundViewModel
+
+<h1>Add New Round</h1>
+
+<p>Search the <a href="https://ncrdb.usga.org/" target="_blank">USGA Course Rating and Slope Database</a></p>
+
+<form asp-controller="Round" asp-action="Add" method="post">
+    <div class="row has-error">
+
+        <div class="col">
+            <label asp-for="Course"></label>
+            <input class="form-control" asp-for="Course" />
+            <span asp-validation-for="Course"></span>
+        </div>
+
+        <div class="col">
+            <label asp-for="Score"></label>
+            <input class="form-control" asp-for="Score" />
+            <span asp-validation-for="Score"></span>
+        </div>
+
+        <div class="col">
+            <label asp-for="Slope"></label>
+            <input class="form-control" asp-for="Slope" />
+            <span asp-validation-for="Slope"></span>
+        </div>
+
+        <div class="col">
+            <label asp-for="Rating"></label>
+            <input class="form-control" asp-for="Rating" />
+            <span asp-validation-for="Rating"></span>
+        </div>
+    </div>
+
+    <input type="submit" value="New Round" />
+</form>

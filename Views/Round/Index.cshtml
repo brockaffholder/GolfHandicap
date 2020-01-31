@@ -1,0 +1,34 @@
+﻿@model List<GolfHandicap.Models.Round>
+@{
+}
+
+<h1>My Rounds</h1>
+
+@if (Model.Count == 0)
+{
+    <p>No rounds have been logged in your account</p>
+}
+
+<table class="table">
+    <tr>
+        <th>Course</th>
+        <th>Score</th>
+        <th>Slope</th>
+        <th>Rating</th>
+        <th>Score Differential</th>
+    </tr>
+
+    @foreach (var round in Model)
+    {
+        <tr>
+            <td>@round.Course</td>
+            <td>@round.Score</td>
+            <td>@round.Slope</td>
+            <td>@round.Rating</td>
+            <td>@round.ScoreDifferential</td>
+        </tr>
+    }
+</table>
+
+
+<p><a asp-controller="Round" asp-action="Add">Add New Round</a></p>
